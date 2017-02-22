@@ -1,0 +1,66 @@
+var circle = {
+	x: 100, 
+	y: 400,
+	vx: 3,
+	vy: -5,
+	r: 20, //ratio
+	h: 30 //hue
+};
+
+var circle2 = {
+	x: 140, 
+	y: 400,
+	vx: 3,
+	vy: -4,
+	r: 15,
+	h: 90
+};
+
+var circle3 = {
+	x: 230, 
+	y: 400,
+	vx: 3,
+	vy: -3,
+	r: 10,
+	h: 270
+};
+
+function setup() {
+	createCanvas(400, 400);
+}
+
+function draw() {
+  	background(255); // clear the background
+	paint(circle);
+	paint(circle2);
+	paint(circle3);
+	
+	move(circle);
+	move(circle2);
+	move(circle3);
+	
+	bounce(circle);
+	bounce(circle2);
+	bounce(circle3);
+}
+
+function paint(circle) {
+	colorMode(HSB);
+	fill(circle.h, 100, 100);
+	noStroke();
+	ellipse(circle.x, circle.y, circle.r*2, circle.r*2);
+}
+function move(circle) {
+	circle.x += circle.vx; // circle.x = circle.x + circle.vx
+	circle.y += circle.vy;
+}
+
+function bounce(circle) {
+	if (circle.x > 100 || circle.x < 150) { // area of x vibration
+		circle.vx = - circle.vx;
+	}
+	if (circle.y > height || circle.y < 0) {
+		
+circle.y = 400; // bubbles go back to the bottom
+	}
+}
