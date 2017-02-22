@@ -8,7 +8,7 @@ function setup() {
       y: 400,
       vx: 0,
       vy: random(-1,-10),
-      r: random(2,50),
+      r: random(2,20),
       h: random(0,360)
   };
     append(allCircles,circle);
