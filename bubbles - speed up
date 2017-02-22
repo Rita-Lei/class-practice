@@ -2,7 +2,7 @@ var circle = {
 	x: 100, 
 	y: 400,
 	vx: 3,
-	vy: -5,
+	vy: -5, // speed
 	r: 20, //ratio
 	h: 30 //hue
 };
@@ -44,8 +44,10 @@ function draw() {
 	bounce(circle3);
 }
 
-function keyPressed() {
-  if (keyCode == UP_ARROW) {
+function keyPressed() { // interaction
+  if (keyCode == UP_ARROW) { 
+    // while going up, y is decreasing from 400 to 0
+    // so we use minus instead of plus
     circle.vy -= 2;
     circle2.vy -= 2;
     circle3.vy -= 2;  
