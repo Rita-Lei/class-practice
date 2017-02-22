@@ -17,7 +17,7 @@ function setup() {
 
 function draw() {
   	background(255); // clear the background
-  for (var i = 0; i <= 2; i += 1) {
+  for (var i = 0; i < allCircles.length; i += 1) {
 	paint(allCircles[i]);
 	move(allCircles[i]);
 	bounce(allCircles[i]);
